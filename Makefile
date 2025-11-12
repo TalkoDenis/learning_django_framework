@@ -1,4 +1,4 @@
-.PHONY: run-admin run-server migrate clean lint lint-fix format format-fix
+.PHONY: run-admin run-server migrate check clean lint lint-fix format format-fix
 
 
 run-admin:
@@ -9,6 +9,9 @@ run-server:
 
 migrate:
 	uv run python manage.py migrate
+
+check:
+	uv run python manage.py check
 
 clean:
 	find . -type d -name "__pycache__" -exec rm -rf {} +
