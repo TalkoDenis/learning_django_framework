@@ -1,4 +1,4 @@
-.PHONY: run-admin run-server migrate check clean lint lint-fix format format-fix
+.PHONY: run-admin run-server migrate check clean lint lint-fix format format-fix createsuperuser runserver
 
 
 run-admin:
@@ -28,3 +28,9 @@ format:
 
 format-fix:
 	uv run ruff format .
+
+createsuperuser:
+	uv run python manage.py createsuperuser
+
+runserver:
+	uv run python manage.py runserver
